@@ -5,7 +5,7 @@ import {LEADERS} from '../shared/leaders';
 import {COMMENTS} from '../shared/comments';
 
 export const initialState = {
-    dishes: DISHES,
+        dishes: DISHES,
         comments: COMMENTS,
         promotions: PROMOTIONS,
         leaders: LEADERS
