@@ -1,6 +1,8 @@
 import React from 'react';
 import {Card, CardImg, CardText,  CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button} from 'reactstrap';
+import CommentForm from './CommentFormComponent';
 import {Link} from 'react-router-dom';
+
 
 const DishDetail = (props) => {
     console.log(props);
@@ -60,7 +62,7 @@ function RenderComments({comments}) {
                     <Card>
                        <CardBody>{comm}</CardBody>
                        <CardBody>
-                       <Button outline><span className="fa fa-pencil fa-lg"></span> Submit Feedback</Button>
+                       <CommentForm></CommentForm>
                        </CardBody>
                     </Card>
                     
