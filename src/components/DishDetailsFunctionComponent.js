@@ -26,7 +26,9 @@ const DishDetail = (props) => {
                         <RenderDish dish={props.dish} />
                     </div>
                     <div className="col-12 col-md-5 m-1">
-                        <RenderComments comments={props.comments} />
+                        <RenderComments comments={props.comments} 
+                            addComment={props.addComment}
+                            dishId= {props.dish.id}/>
                     </div>
             </div>
             </div>
@@ -47,7 +49,7 @@ function RenderDish({dish}) {
     );
 }
 
-function RenderComments({comments}) {
+function RenderComments({comments, addComment, dishId}) {
     const comm = comments.map((comment) => {
         return(
             <div key={comment.id}>
@@ -62,7 +64,7 @@ function RenderComments({comments}) {
                     <Card>
                        <CardBody>{comm}</CardBody>
                        <CardBody>
-                       <CommentForm></CommentForm>
+                       <CommentForm dishId={dishId} addComment={addComment}></CommentForm>
                        </CardBody>
                     </Card>
                     
@@ -86,7 +88,7 @@ class CommentForm extends Component {
     }
     handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment)
         //event.preventDefault();
     }
 
@@ -142,7 +144,7 @@ class CommentForm extends Component {
                             <Row className="form-group">
                                 <Label htmlFor="comment" md={12}>Comment</Label>
                                 <Col md={12}>
-                                    <Control.textarea model=".commet" id="comment" name="comment"
+                                    <Control.textarea model=".comment" id="comment" name="comment"
                                         rows="6"
                                         className="form-control" />
                                 </Col>
