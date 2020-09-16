@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
 //import Menu from './MenuComponent';
-import DishDetail from './DishDetailsComponent';
+//import DishDetail from './DishDetailsComponent';
 import Menu from './MenuFunctionComponent';
 import Contact from './ContactComponent';
-//import DishDetail from './DishDetailsFunctionComponent';
+import DishDetail from './DishDetailsFunctionComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import About from './AboutComponent'
