@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardImg, CardText,  CardBody, CardTitle, Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import {Card, CardImg, CardText,  CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
 
 const DishDetail = (props) => {
@@ -59,7 +59,11 @@ function RenderComments({comments}) {
         <div>
                     <Card>
                        <CardBody>{comm}</CardBody>
+                       <CardBody>
+                       <Button outline><span className="fa fa-pencil fa-lg"></span> Submit Feedback</Button>
+                       </CardBody>
                     </Card>
+                    
         </div> 
     );
 }
