@@ -5,11 +5,9 @@ export const Comments = (state = { errMess: null, comments:[]}, action) => {
     switch (action.type) {
         case ActionTypes.ADD_COMMENT:
             var comment = action.payload;
-            /* 
-            State . length gives the next id based on current length
-            comment.id = state.comments.length;
-            comment.date = new Date().toISOString();
-            */
+            /* State . length gives the next id based on current length */
+            //comment.id = state.comments.length;
+            //comment.date = new Date().toISOString();
             /**
              * Concat is immutable method, which does not change the current state
              * It creates the new state and returns that
