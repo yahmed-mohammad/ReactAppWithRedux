@@ -47,7 +47,7 @@ const DishDetail = (props) => {
                     </div>
                     <div className="col-12 col-md-5 m-1">
                         <RenderComments comments={props.comments} 
-                            addComment={props.addComment}
+                            postComment={props.postComment}
                             dishId= {props.dish.id}/>
                     </div>
             </div>
@@ -70,7 +70,7 @@ function RenderDish({dish}) {
     );
 }
 
-function RenderComments({comments, addComment, dishId}) {
+function RenderComments({comments, postComment, dishId}) {
     const comm = comments.map((comment) => {
         return(
             <div key={comment.id}>
@@ -85,7 +85,7 @@ function RenderComments({comments, addComment, dishId}) {
                     <Card>
                        <CardBody>{comm}</CardBody>
                        <CardBody>
-                       <CommentForm dishId={dishId} addComment={addComment}></CommentForm>
+                       <CommentForm dishId={dishId} postComment={postComment}></CommentForm>
                        </CardBody>
                     </Card>
                     
@@ -109,7 +109,7 @@ class CommentForm extends Component {
     }
     handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
-        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment)
+        this.props.postComment(this.props.dishId, values.rating, values.author, values.comment)
         //event.preventDefault();
     }
 
